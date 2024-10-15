@@ -1,0 +1,42 @@
+#Ignoring the node modules folder
+node_modules/
+
+#Ignoring certain changes
+app/pay/
+
+#Ignore env files
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+#Ignoring NextJS defaults
+next-env.d.ts
+.next/
+out/
+build/
+
+# Ignore editor and IDE config files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore yarn and lock files (optional, if using npm or different package manager)
+yarn.lock
+pnpm-lock.yaml
+bun.lock
+
+#Ignore logs
+logs/
+*.log
+
+#misc
+signup.txt
