@@ -1,6 +1,6 @@
 'use client'
 
-import { MDXRemote } from 'next-mdx-remote'
+const { MDXRemote } = await import('next-mdx-remote');
 import CodeSnippet from '@/components/Codesnippet'
 import { ComponentProps, useEffect, useState } from 'react'
 import Appbar from "@/components/Appbar"

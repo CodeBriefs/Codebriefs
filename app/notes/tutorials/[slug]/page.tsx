@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import fs from 'fs/promises'
 import path from 'path'
-import { serialize } from 'next-mdx-remote/serialize'
+const { serialize } = await import('next-mdx-remote/serialize');
 import TutorialContent from '@/components/Tutorial'
 
 export async function generateStaticParams() {
