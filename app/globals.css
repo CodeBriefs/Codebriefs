@@ -55,6 +55,34 @@
     --chart-5: 340 75% 55%
   }
 }
+
+.prose {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply text-gray-900 dark:text-white font-bold my-4;
+}
+
+.prose p {
+  @apply my-4;
+}
+
+.prose ul, .prose ol {
+  @apply my-4 ml-8;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+/* .prose code {
+  @apply bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5;
+} */
+
+/* .prose pre {
+  @apply bg-gray-100 dark:bg-gray-800 rounded p-4 my-4 overflow-x-auto;
+} */
 @layer base {
   * {
     @apply border-border;
@@ -63,3 +91,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* code {
+  background-color: transparent !important;
+} */

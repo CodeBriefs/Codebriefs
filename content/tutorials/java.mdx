@@ -1,0 +1,828 @@
+This comprehensive guide covers Java programming from basic syntax to advanced concepts.
+
+## Boilerplate Code
+
+Every Java program starts with a basic structure. Here's an example of a simple Java program:
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("This is the First Java Program");
+    }
+}
+```
+
+To display output in Java, you can use:
+
+```java
+System.out.println(/*Print anything here*/); // This will print in a new line
+System.out.print(/*Print anything*/); // This will print in the same line
+```
+
+## Comment Lines
+
+Java supports three types of comments:
+1. Single Line Comment
+2. Multi Line Comment
+3. Documentation Comment
+
+```java
+// Single line comment
+
+/*
+This is a Multi line 
+comment
+*/
+
+/**
+This is a Documentation comment
+*/
+```
+
+## Data Types and Variables
+
+Variables in Java are containers that store values. These values have specific types, known as data types.
+
+```java
+// Integer type
+int i = 10;
+
+// Long type
+long l = 1014567821L;
+
+// Double type
+double d = 10.05d;
+
+// Float type
+float f = 10.05f;
+
+// Character type
+char ch = 'a';
+
+// String type
+String str = "rrcodistry";
+
+// Boolean type
+boolean b = true; // Default value is false
+```
+
+### Rules for naming a variable:
+
+1. The variable name should not be a Java reserved word or keyword.
+2. It should neither start with a number nor any symbol.
+3. Symbols like $ and _ can be used in between letters to increase the length of the variable.
+
+## Type Casting
+
+Type casting is the conversion of one data type to another. There are two types of type casting:
+
+### Implicit Type Casting
+
+Automatic conversion of a lower data type to a higher data type.
+
+### Explicit Type Casting
+
+Forceful conversion of a higher data type to a lower data type.
+
+```java
+double d = 8.2364;  // double takes 8 bytes of size
+int i = (int)d;     // integer takes 4 bytes
+float f = (float)d; // float takes 4 bytes
+```
+
+## Constants
+
+Constants are variables that do not change their value throughout the program. To create a constant, use the `final` keyword:
+
+```java
+final int a = 10;
+```
+
+## User Input in Java
+
+To take user input in Java, we use the Scanner class from the `java.util` package:
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the values:");
+        
+        int i = sc.nextInt();
+        double d = sc.nextDouble();
+        float f = sc.nextFloat();
+        char ch = sc.next().charAt(0);
+        String sent = sc.nextLine();
+        String word = sc.next();
+        
+        System.out.println(i);
+        System.out.println(d);
+        System.out.println(f);
+        System.out.println(ch);
+        System.out.println(sent);
+        System.out.println(word);
+    }
+}
+```
+
+## Operators in Java
+
+Java supports various types of operators:
+
+### 1. Arithmetic Operators
+- **+** : addition
+- **-** : subtraction
+- ***** : multiplication
+- **/** : division (quotient)
+- **%** : modulus (remainder)
+
+### 2. Logical Operators
+They operate on two or more operands and return true or false (boolean).
+- **&&** : AND
+- **||** : OR
+- **!** : NOT
+
+### 3. Relational Operators
+They are used for comparison of two or more operands.  
+Thery also return true or false as output.
+- **>** : greater than
+-  <  : less than
+- **>=** : greater than or equal to
+- **< =** : less than or equal to
+- **==** : equal to
+- **!=** : not equal to
+
+### 4. Unary Operators
+- **++** : increment
+- **--** : decrement
+
+Example:
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+        
+        // Logical and Relational Operators
+        boolean output1 = a > b && (a + b) <= 50; //false
+        /*Since a is less than b, the condition is false.
+        The condition (a+b)<=50 is not checked*/
+        
+        
+        boolean output2 = a > b || (a + b) <= 50
+        // Although, a is less than b but (a+b)<=50, the condition is true
+        
+        
+        boolean output3 = !(a > b);
+        // The condition is true since, a is not greater than b
+        
+        // Unary Operators
+        System.out.println("The is called Pre-increment : "+ (++a));
+        System.out.println("This is called Pre-decrement : "+ (--a));
+        System.out.println("This is called Post-increment : "+ (a++));
+        System.out.println("This is called Post-decrement : "+(a--));
+    }
+}
+```
+
+## Conditional Statements
+
+Java supports various conditional statements.  
+Conditional statements are used to check whether the given condition is true or false.  
+They return output as per the user's choice.
+
+### 1. if statement
+
+```java
+if (condition) {
+    // statements
+}
+```
+
+### 2. if-else statement
+
+```java
+if (condition) {
+    // statements
+}
+else {
+    // statements
+}
+```
+
+### 3. if-else if-else statement
+
+```java
+if (condition1) {
+    // statements
+}
+else if (condition2) {
+    // statements
+}
+else {
+    // statements
+}
+```
+
+### 4. Nested conditionals
+
+```java
+if (condition1) {
+    if (condition2) {
+        // statements
+    }
+    else {
+        // statements
+    }
+}
+else {
+    if (condition3) {
+        // statements
+    }
+    else {
+        // statements
+    }
+}
+```
+
+### 5. Ternary Operator
+
+```java
+//Syntax for ternary operator:
+//variable = (condition) ? expression1 : expression2;
+
+// Example
+boolean b = (10 < 20) ? true : false;
+```
+
+### 6. Switch case statements
+
+```java
+switch (expression) {
+    case value1:
+        // statements
+        break;
+    case value2:
+        // statements
+        break;
+    default:
+        // statements
+}
+```
+
+In **switch-case** statements, there is a situation called **Fall-through**.  
+**Fall through** is the situation that occurs when we do not use break statement between two cases. When break statement is not used, after one case is executed, the very next case will also be executed irrespective of the condition whether it is true or false.
+
+## Iterative Statements or Loops
+
+Java supports three types of loops:
+
+### 1. for loop
+
+```java
+for (initialization; condition; update) {
+    // statements
+}
+
+// Example
+for (int i = 1; i <= 10; i++) {
+    System.out.println(i + " Done!!");
+}
+```
+
+### 2. while loop
+
+```java
+initialization;
+while (condition) {
+    // statements
+    update;
+}
+
+// Example
+int i = 1;
+while (i <= 10) {
+    System.out.println(i + "Done!!");
+    i++;
+}
+```
+
+### 3. do-while loop
+
+```java
+initialization;
+do {
+    // statements
+    update;
+} while (condition);
+
+// Example
+int i = 1;
+do {
+    System.out.println(i + "Done!!");
+    i++;
+} while (i <= 10);
+```
+
+## Nested Loops
+
+You can nest loops inside other loops. Here are some examples:
+
+### 1. for inside for
+
+```java
+for (initialization1; condition1; update1) {
+    for (initialization2; condition2; update2) {
+        // statements
+    }
+}
+```
+
+### 2. while inside for
+
+```java
+for (initialization1; condition1; update1) {
+    while (condition2) {
+        // statements
+        update2;
+    }
+}
+```
+
+### 3. for inside while
+
+```java
+while (condition1) {
+    for (initialization2; condition2; update2) {
+        // statements
+    }
+    update1;
+}
+```
+
+### 4. while inside while
+
+```java
+while (condition1) {
+    while (condition2) {
+        // statements
+        update2;
+    }
+    update1;
+}
+```
+
+## Characters
+
+Java has a Character class with various methods:
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        char ch = 'a';
+        
+        System.out.println(Character.isUpperCase(ch));
+        System.out.println(Character.isLowerCase(ch));
+        System.out.println(Character.isLetter(ch));
+        System.out.println(Character.isDigit(ch));
+        System.out.println(Character.isLetterOrDigit(ch));
+        System.out.println(Character.isWhitespace(ch));
+        System.out.println(Character.toString(ch));
+        System.out.println(Character.toUpperCase(ch));
+        System.out.println(Character.toLowerCase(ch));
+    }
+}
+```
+
+## Strings
+
+Strings in Java are objects that represent sequences of characters:
+
+```java
+String str = "Strings";
+String s = new String("Strings");
+
+// String methods
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = " I am learning Java";
+        System.out.println(str.length());
+        System.out.println(str.charAt(5));
+        System.out.println(str.toLowerCase());
+        System.out.println(str.trim());
+        System.out.println(str.toCharArray());
+        System.out.println(str.substring(5));
+        System.out.println(str.substring(5, 14));
+        System.out.println(str.startsWith("I am"));
+        System.out.println(str.replace('r', 'c'));
+        System.out.println(str.replace("am", "was"));
+        System.out.println(str.indexOf("Java"));
+        System.out.println(str.equals("I am Learning Java"));
+        System.out.println(str.equalsIgnoreCase("i am learning java"));
+    }
+}
+```
+
+## Arrays
+
+Arrays are collections of values of similar data types.
+
+### Single Dimensional Arrays
+
+```java
+// Integer array
+int[] a1 = {1, 2, 3, 4, 5};
+
+// Double array
+double[] a2 = {1.1, 2.2, 3.3, 4.4, 5.5};
+
+// Character array
+char[] a4 = {'a', 'b', 'c', 'd', 'e'};
+
+// String array
+String[] a5 = {"This", "is", "how", "we", "create", "arrays"};
+
+// Finding length of an array
+int[] a = {1, 19, 36, 0, 32, 45, 11, 7, 23, 16};
+int length_of_array = a.length;
+```
+
+### Multi Dimensional Arrays
+
+```java
+int[][] a = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+for (int i = 0; i < a.length; i++) {
+    for (int j = 0; j < a[i].length; j++) {
+        System.out.print(a[i][j] + " ");
+    }
+    System.out.println();
+}
+```
+
+## For-Each Loop
+
+The for-each loop is specifically designed for iterating over arrays and collections:
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("Printing a Single Dimensional Array:");
+        int[] a = {12, 36, 10, 7, 39, 45, 0, 54};
+        for (int k : a) {
+            System.out.print(k + " ");
+        }
+        
+        System.out.println("\n\nPrinting a two dimensional Array:");
+        int[][] da = {
+            {1, 6, 8},
+            {2, 3, 5},
+            {9, 11, 13}
+        };
+        for (int[] k : da) {
+            for (int element : k) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+## Methods
+
+Methods are parts of a program that execute specific tasks. There are two types of methods:
+
+1. Pre-Defined Methods (e.g., `println()`, `nextInt()`)
+2. User-Defined Methods
+
+Example of user-defined methods:
+
+```java
+public class Test {
+    public void custom1(int val1) {
+        System.out.println("The value entered is: " + val1);
+        System.out.println("This is a custom non-static method");
+    }
+    
+    public static void custom2(int val2) {
+        System.out.println("The value entered is: " + val2);
+        System.out.println("This is a custom static method");
+    }
+    
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.custom1(10);
+        custom2(20);
+    }
+}
+```
+
+### Method Overloading
+
+Method overloading allows multiple methods with the same name but different parameters:
+
+```java
+public class Test {
+    public void custom(int val1) {
+        System.out.println("The value entered is: " + val1);
+    }
+    
+    public static void custom(double val2) {
+        System.out.println("The value entered is: " + val2);
+    }
+    
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.custom(10);
+        t.custom(10.05);
+    }
+}
+```
+
+### Recursion
+
+Recursion is when a method calls itself:
+
+```java
+import java.util.Scanner;
+
+public class Test {
+    public int recurse(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * recurse(n - 1);
+        }
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Test t = new Test();
+        System.out.println("The factorial of " + n + " is: " + t.recurse(n));
+    }
+}
+```
+
+## Constructors
+
+Constructors are special methods with the same name as the class and no return type:
+
+```java
+public class Test {
+    int a;
+    
+    public Test() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        a = sc.nextInt();
+    }
+    
+    public void show() {
+        System.out.println("The number entered is: " + a);
+    }
+    
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.show();
+    }
+}
+```
+
+### Types of Constructors
+
+1. Parameterized Constructors
+2. Non-Parameterized  Constructors
+3. Default Constructors
+
+### Constructor Overloading
+
+```java
+public class Test {
+    char ch;
+    
+    public Test(int i) {
+        System.out.println("The integer number entered is: " + i);
+    }
+    
+    public Test(double d) {
+        System.out.println("The double number entered is: " + d);
+    }
+    
+    public Test() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a character: ");
+        this.ch = sc.next().charAt(0);
+    }
+    
+    public void show() {
+        System.out.println("The character entered is: " + ch);
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
+        int int_val = sc.nextInt();
+        System.out.println("Enter a double: ");
+        double double_val = sc.nextDouble();
+        
+        Test t1 = new Test(int_val);
+        Test t2 = new Test(double_val);
+        Test t3 = new Test();
+        t3.show();
+    }
+}
+```
+
+## Math Class Methods
+
+Java's Math class provides various mathematical operations:
+
+```java
+public class MathDemo {
+    public static void main(String[] args) {
+        System.out.println(Math.max(5, 10));
+        System.out.println(Math.min(5, 10));
+        System.out.println(Math.sqrt(25));
+        System.out.println(Math.cbrt(27));
+        System.out.println(Math.random());
+        System.out.println(Math.pow(2, 3));
+        System.out.println(Math.abs(-5));
+        System.out.println(Math.ceil(4.3));
+        System.out.println(Math.floor(4.7));
+        System.out.println(Math.log(10));
+        System.out.println(Math.rint(4.5));
+        System.out.println(Math.round(4.7));
+    }
+}
+```
+
+## Exception Handling
+
+Exception handling in Java is done using try-catch blocks or the throws keyword:
+
+```java
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+        
+        // OR
+        
+        // public static void main(String[] args) throws IOException {
+        //     // code that may throw IOException
+        // }
+    }
+}
+```
+
+## Inheritance
+
+Inheritance allows a class to acquire properties of another class:
+
+```java
+class SuperClass {
+    int a;
+    
+    public int setA(int a) {
+        System.out.println("I am in the setter method of the SuperClass");
+        System.out.println("I am setting the value of a as: " + (this.a = a));
+        return a;
+    }
+    
+    public int getA() {
+        return a;
+    }
+}
+
+class SubClass extends SuperClass {
+    int b;
+    
+    public int setB(int b) {
+        System.out.println("I am in the setter method of the SubClass");
+        System.out.println("I am setting the value of b as: " + (this.b = b));
+        return b;
+    }
+    
+    public int getB() {
+        return b;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        SuperClass obj1 = new SuperClass();
+        obj1.setA(10);
+        System.out.println("The value of a set by superclass is: " + obj1.getA());
+        
+        SubClass obj2 = new SubClass();
+        obj2.setA(25);
+        System.out.println("The value of a set by subclass is: " + obj2.getA());
+    }
+}
+```
+
+The different types of Inheritance are:
+1. Single Inheritance
+2. Multilevel Inheritance
+3. Hierarchial Inheritance
+4. Multiple Inheritance
+5. Hybrid Inheritance
+
+Multiple and Hybrid Inheritance in Java can be achieved only through the concept of Interfaces. Classes in Java do not support Multiple and Hybrid Inheritance.
+
+## Polymorphism
+
+Polymorphism is the ability of an object to take multiple forms:
+
+```java
+class A {
+    public void calculate() {
+        System.out.println("The calculate method of class A is calculating Sum.");
+        System.out.println("Sum of 2 and 3 is " + (2 + 3));
+    }
+}
+
+class B extends A {
+    public void calculate() {
+        System.out.println("The calculate method of class B is calculating Difference.");
+        System.out.println("Difference of 2 and 3 is " + (2 - 3));
+    }
+}
+
+class C extends A {
+    public void calculate() {
+        System.out.println("The calculate method of class C is calculating Product.");
+        System.out.println("Product of 2 and 3 is " + (2 * 3));
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        A a = new A();
+        B b = new B();
+        C c = new C();
+        
+        a.calculate();
+        b.calculate();
+        c.calculate();
+    }
+}
+```
+
+There are two types of polymorphism:
+1. Compile-time Polymorphism (Static Binding or Method Overloading)
+```java
+class MathOperations {
+    int add(int a, int b) {
+        return a + b;
+    }
+    
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MathOperations ops = new MathOperations();
+        System.out.println(ops.add(10, 20));  // Calls int version
+        System.out.println(ops.add(5.5, 7.3));  // Calls double version
+    }
+}
+```
+
+2. Run-time Polymorphism (Dynamic Binding or Method Overriding)
+```java
+class Animal {
+    void sound() {
+        System.out.println("This animal makes a sound.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("The cat meows.");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal myAnimal = new Cat(); // Polymorphism
+        myAnimal.sound(); // Calls Cat's version of sound method
+    }
+}
+
+```
