@@ -102,7 +102,7 @@ export default function ContactUs() {
                     <div className="grid md:grid-cols-5">
                         <div className="md:col-span-3 p-8 md:p-12">
                             <h2 className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-4">Get in Touch</h2>
-                            <p className="text-gray-600 dark:text-gray-300 mb-8">We'd love to hear from you. Send us a message!</p>
+                            <p className="text-gray-600 dark:text-gray-300 mb-8">We would love to hear from you. Send us a message!</p>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
                                     <Label htmlFor="name" className="text-gray-700 dark:text-gray-200">Name</Label>
