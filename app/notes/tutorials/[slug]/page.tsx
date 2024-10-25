@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import fs from 'fs/promises'
 import path from 'path'
 import { serialize } from 'next-mdx-remote/serialize';
-import TutorialContent from '@/components/Tutorial'
+import TutorialContent from '@/components/TutorialContent'
 
 export async function generateStaticParams() {
   const files = await fs.readdir(path.join(process.cwd(), 'content/tutorials'))
