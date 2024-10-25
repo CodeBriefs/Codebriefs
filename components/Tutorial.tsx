@@ -1,6 +1,6 @@
 'use client'
 
-const { MDXRemote } = await import('next-mdx-remote');
+import {MDXRemote} from "next-mdx-remote"
 import CodeSnippet from '@/components/Codesnippet'
 import { ComponentProps, useEffect, useState } from 'react'
 import Appbar from "@/components/Appbar"
@@ -14,22 +14,13 @@ type CodeSnippetProps = ComponentProps<typeof CodeSnippet>
 
 const components = {
   p: ({ children }: { children: React.ReactNode }) => (
-    <motion.p 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="mb-4 leading-relaxed text-foreground"
-    >
+    <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+      className="mb-4 leading-relaxed text-foreground">
       {children}
     </motion.p>
   ),
   h1: ({ children }: { children: React.ReactNode }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="mb-6 mt-12"
-    >
+    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-6 mt-12">
       <h1 className="text-4xl font-bold pb-2 text-foreground relative">
         <span>{children}</span>
         <span className="absolute bottom-0 left-0 w-1/4 h-1 bg-primary"></span>
@@ -38,12 +29,7 @@ const components = {
     </motion.div>
   ),
   h2: ({ children }: { children: React.ReactNode }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="mb-4 mt-8"
-    >
+    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-4 mt-8">
       <h2 className="text-3xl font-semibold text-primary flex items-center">
         <BookOpen className="mr-2 h-6 w-6" />
         {children}
@@ -52,33 +38,21 @@ const components = {
     </motion.div>
   ),
   h3: ({ children }: { children: React.ReactNode }) => (
-    <motion.h3 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-2xl font-medium text-primary-foreground mb-3 mt-6 flex items-center"
-    >
+    <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+      className="text-2xl font-medium text-primary-foreground mb-3 mt-6 flex items-center" >
       <Code className="mr-2 h-5 w-5" />
       {children}
     </motion.h3>
   ),
   ul: ({ children }: { children: React.ReactNode }) => (
-    <motion.ul 
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="list-disc pl-6 mb-4 space-y-2 text-foreground"
-    >
+    <motion.ul initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}
+      className="list-disc pl-6 mb-4 space-y-2 text-foreground">
       {children}
     </motion.ul>
   ),
   ol: ({ children }: { children: React.ReactNode }) => (
-    <motion.ol 
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="list-decimal pl-6 mb-4 space-y-2 text-foreground"
-    >
+    <motion.ol initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}
+      className="list-decimal pl-6 mb-4 space-y-2 text-foreground">
       {children}
     </motion.ol>
   ),
@@ -88,24 +62,15 @@ const components = {
     </li>
   ),
   pre: ({ children }: { children: React.ReactNode }) => (
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className="mb-6 relative"
-    >
+    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="mb-6 relative">
       <div className="absolute -left-4 top-0 bottom-0 w-1 bg-primary"></div>
       {children}
     </motion.div>
   ),
   code: (props: CodeSnippetProps) => <CodeSnippet {...props} />,
   blockquote: ({ children }: { children: React.ReactNode }) => (
-    <motion.blockquote
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="border-l-4 border-primary pl-4 italic my-4 text-foreground bg-primary/10 p-4 rounded-r-lg"
-    >
+    <motion.blockquote initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}
+      className="border-l-4 border-primary pl-4 italic my-4 text-foreground bg-primary/10 p-4 rounded-r-lg">
       <Lightbulb className="inline-block mr-2 h-5 w-5 text-primary" />
       {children}
     </motion.blockquote>
@@ -172,18 +137,12 @@ export default function TutorialContent({ source, slug }: { source: any, slug: s
       />
       <main className="flex-grow p-8">
         <div className="max-w-4xl mx-auto">
-          <motion.h1 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-5xl font-bold mb-8 text-center text-[#9333EA]"
-          >
+          <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+            className="text-5xl font-bold mb-8 text-center text-[#9333EA]">
             {slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')}
           </motion.h1>
           {source ? (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="prose prose-lg max-w-none dark:prose-invert"
             >
